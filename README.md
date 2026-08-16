@@ -5,13 +5,13 @@ A Netflix-inspired streaming website built using HTML, CSS and JavaScript with m
 ## Screenshots
 
 ### Home Page
-![Home Page](screenshots/home.png)
+![Home Page](screenshots/image/home.png)
 
 ### Trending Section
-![Trending Section](screenshots/trending.png)
-
-### Search Feature
-![Search Feature](screenshots/search.png)
+![Trending Section](screenshots/image/trending.png)
 
 ### Video Player
-![Video Player](screenshots/video.png)
+![Video Player](screenshots/image/video.png)
+
+### Questions and Answers
+![Questions and Answers](screenshots/image/questionandans.png)
