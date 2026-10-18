@@ -53,7 +53,7 @@ Add screenshots captured from the actual running website to a screenshots/ folde
 [![Video Preview](assets/screenshots/video.png)](assets/screenshots/video.png)
 
 ### ❓ Question and Answer Section
-[![Question and Answer Section](assets/screenshots/question-and-answer.png)](assets/screenshots/question-and-answer.png)
+[![Question and Answer Section](assets/screenshots/Questionandans.png)](assets/screenshots/Questionandans.png)
 
 Click a screenshot to open the full-size image. Image paths must match the uploaded filenames.
 
