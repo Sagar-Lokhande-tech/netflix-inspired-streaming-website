@@ -44,16 +44,16 @@ Note: Features that require server-side authentication, subscriptions, or a stre
 Add screenshots captured from the actual running website to a screenshots/ folder. Then use the following links:
 
 ### 🏠 Home Page
-[![Home Page](screenshots/home.png)](screenshots/home.png)
+[![Home Page](assets/screenshots/home.png)](assets/screenshots/home.png)
 
 ### 🔥 Trending Content
-[![Trending Content](screenshots/trending.png)](screenshots/trending.png)
+[![Trending Content](assets/screenshots/trending.png)](assets/screenshots/trending.png)
 
 ### 🎬 Video Preview
-[![Video Preview](screenshots/video.png)](screenshots/video.png)
+[![Video Preview](assets/screenshots/video.png)](assets/screenshots/video.png)
 
 ### ❓ Question and Answer Section
-[![Question and Answer Section](screenshots/question-and-answer.png)](screenshots/question-and-answer.png)
+[![Question and Answer Section](assets/screenshots/question-and-answer.png)](assets/screenshots/question-and-answer.png)
 
 Click a screenshot to open the full-size image. Image paths must match the uploaded filenames.
 
