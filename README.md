@@ -44,7 +44,7 @@ Note: Features that require server-side authentication, subscriptions, or a stre
 Add screenshots captured from the actual running website to a screenshots/ folder. Then use the following links:
 
 ### 🏠 Home Page
-[![Home Page](assets/screenshots/home.png)](assets/screenshots/home.png)
+[![Home Page](assets/screenshots/Home.png)](assets/screenshots/Home.png)
 
 ### 🔥 Trending Content
 [![Trending Content](assets/screenshots/trending.png)](assets/screenshots/trending.png)
