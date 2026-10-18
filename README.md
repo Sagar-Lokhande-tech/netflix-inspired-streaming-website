@@ -47,7 +47,7 @@ Add screenshots captured from the actual running website to a screenshots/ folde
 [![Home Page](assets/screenshots/Home.png)](assets/screenshots/Home.png)
 
 ### 🔥 Trending Content
-[![Trending Content](assets/screenshots/trending.png)](assets/screenshots/trending.png)
+[![Trending Content](assets/screenshots/Trending.png)](assets/screenshots/Trending.png)
 
 ### 🎬 Video Preview
 [![Video Preview](assets/screenshots/video.png)](assets/screenshots/video.png)
