@@ -1,0 +1,283 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[8647],{85018:function(e,t,n){n.d(t,{F4:function(){return a},sq:function(){return i},uN:function(){return l}});var r=n(10081);let i=(0,r.ZP)`
+    fragment BaseTitleCard on Title {
+        id
+        titleText {
+            text
+        }
+        titleType {
+            id
+            text
+            canHaveEpisodes
+            displayableProperty {
+                value {
+                    plainText
+                }
+            }
+        }
+        originalTitleText {
+            text
+        }
+        primaryImage {
+            id
+            width
+            height
+            url
+            caption {
+                plainText
+            }
+        }
+        releaseYear {
+            year
+            endYear
+        }
+        ratingsSummary {
+            aggregateRating
+            voteCount
+        }
+        runtime {
+            seconds
+        }
+        originalRuntime {
+            seconds
+        }
+        certificate {
+            rating
+        }
+        canRate {
+            isRatable
+        }
+        titleGenres {
+            genres(limit: 3) {
+                genre {
+                    text
+                }
+            }
+        }
+    }
+`,a=(0,r.ZP)`
+    fragment TitleCardTrailer on Title {
+        latestTrailer {
+            id
+        }
+    }
+`,l=(0,r.ZP)`
+    fragment PersonalizedTitleCardUserRating on Title {
+        userRating @include(if: $includeUserRating) {
+            value
+        }
+    }
+`},9853:function(e,t,n){n.d(t,{B:function(){return W}});var r=n(52322),i=n(2784),a=n(86528),l=n(2759),s=n(49996),o=n(11438),c=n(86826),u=n(45455),d=n.n(u),x=n(86958),f=n(27613),h=n(84314),p=n(4363),g=n(22396),m=n(19596);let T=e=>{let{title:t,children:n}=e,[a,l]=(0,i.useState)(!1);return(0,r.jsxs)(j,{children:[(0,r.jsx)(c.OutlineButton,{onSelect:()=>l(!a),onColor:"textPrimary",postIcon:a?"expand-less":"expand-more",children:t}),a?(0,r.jsx)(b,{children:n}):null]})},j=m.default.div.withConfig({componentId:"sc-32f51c74-0"})(["padding:0.1rem;display:flex;flex-direction:column;align-items:flex-end;"]),b=m.default.div.withConfig({componentId:"sc-32f51c74-1"})(["padding-top:",";padding-bottom:",";"],g.spacing.xs,g.spacing.xs);var E=n(10081);let y=(0,E.ZP)`
+    fragment EntitlementTier on TestEntitlement {
+        entitlement
+        result
+    }
+`,v=(0,E.ZP)`
+    query debugEntitlementTiers {
+        testEntitlements {
+            ...EntitlementTier
+        }
+    }
+    ${y}
+`;var w=n(18894);w.Ij,w.IJ;let P=()=>{let e=(0,h.n)(),t=(0,f.Z)(),n=(0,l.Zl)()&&e&&t,[{data:i,fetching:a,error:s}]=(0,p.E)({context:{serverSideCacheable:!1,personalized:!0},query:v,pause:!n});return n?a?(0,r.jsx)(c.Loader,{}):s?(0,r.jsx)("span",{children:"Error, try again."}):(0,r.jsx)(T,{title:"Entitlement status",children:(0,r.jsx)(R,{data:i})}):null},R=e=>{let{data:t}=e,n=(0,x.B)().context,i=!d()((0,w.vi)(n));return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)("b",{children:"Current entitlements:"}),i?(0,r.jsx)("i",{children:"(With overrides)"}):(0,r.jsx)("i",{children:"No overrides"}),(0,r.jsx)("br",{}),t?.testEntitlements?.map(e=>r.jsxs("div",{children:[r.jsxs("b",{children:[e.entitlement,":"]}),e.result]},`current-tier-${e.entitlement}`))]})};var $=n(11778),I=n(25436),C=n(93776),k=n(42516);let Z=(0,E.ZP)`
+    query DebugBarProfileIdToUserId($profileId: ID!) {
+        userProfile(input: { profileId: $profileId }) {
+            userId
+        }
+    }
+`,L=()=>{let e;let{pageType:t,pageConst:n}=(0,s.y)(),i=t===I.PageType.USER,a=(0,C.t)(n),l=(0,k.O)(n??""),[{data:o,fetching:u,error:d}]=(0,p.E)({context:{serverSideCacheable:!1,personalized:!0},query:Z,variables:{profileId:n},pause:!i||!a});if(!i||!n)return null;let x=(0,$.isProdStage)()?"https://kamino.imdb.amazon.dev":"https://beta.kamino.imdb.amazon.dev";return(l?e=n:a&&o?.userProfile?.userId&&(e=o.userProfile.userId),u&&a)?(0,r.jsx)(c.Loader,{}):d&&a?(0,r.jsx)("span",{children:"Error resolving userId."}):e?(0,r.jsxs)("span",{children:[(0,r.jsx)("br",{}),(0,r.jsx)("b",{children:"Kamino:"})," ",(0,r.jsx)(c.TextLink,{href:`${x}/?query=${e}`,text:e,type:"launch","aria-label":`Kamino: ${e}`})]}):(0,r.jsxs)("span",{children:[(0,r.jsx)("br",{}),(0,r.jsx)("b",{children:"Kamino:"})," Unable to resolve userId"]})};var z=n(85846);let S=()=>{let e=(0,z.ic)();return(0,r.jsxs)("span",{children:[(0,r.jsx)("b",{children:"Geolocation:"})," Always 98109/US on Amazon VPN.",(0,r.jsx)("br",{}),(0,r.jsx)("b",{children:"Watch options/showtimes location:"})," ",e.postalCodeLocation?.postalCode," /"," ",e.postalCodeLocation?.country]})};var N=n(81089);let O=()=>{let e=x.B().context.sidecar?.weblabs;return e?(0,r.jsx)(T,{title:"Page weblabs",children:(0,r.jsxs)(q,{children:[(0,r.jsx)("table",{children:(0,r.jsxs)("tbody",{children:[(0,r.jsxs)("tr",{children:[(0,r.jsx)("th",{children:"Treatment"}),(0,r.jsx)("th",{children:"Weblab"}),(0,r.jsx)("th",{children:"Code"}),(0,r.jsx)("th",{children:"MCM"}),(0,r.jsx)("th",{children:"APT"})]}),Object.entries(e).sort().map(e=>{let[t,n]=e;return(0,r.jsx)(_,{name:t,value:n},t)})]})}),(0,r.jsxs)("div",{children:["Note: To switch treatments use"," ",(0,r.jsx)(c.TextLink,{href:"https://w.amazon.com/bin/view/NeoWeblab/",inheritColor:!0,type:"launch",text:"NeoWeblab Plugin"})," ","(Must be on VPN)"]})]})}):null},_=e=>{let{name:t,value:n}=e;return(0,r.jsxs)("tr",{children:[(0,r.jsx)("td",{align:"center",children:Object.keys(n)?.[0]}),(0,r.jsx)("td",{align:"center",children:(0,r.jsx)(c.TextLink,{href:`https://weblab.amazon.com/wl/${t}`,type:"launch",text:t,inheritColor:!0})}),(0,r.jsx)("td",{align:"center",children:(0,r.jsx)(c.TextLink,{href:`https://code.amazon.com/search?term=${t}`,type:"launch",text:"link",inheritColor:!0})}),(0,r.jsx)("td",{align:"center",children:(0,r.jsx)(c.TextLink,{href:`https://mcm.amazon.com/search?full_text[predicate]=Equals&full_text[values][]=${t}`,type:"launch",text:"link",inheritColor:!0})}),(0,r.jsx)("td",{align:"center",children:(0,r.jsx)(c.TextLink,{href:`https://apttool.amazon.com/weblab/find/?weblabID=${t}`,type:"launch",text:"link",inheritColor:!0})})]})},q=m.default.div.withConfig({componentId:"sc-e8ca3606-0"})(["table,th,td{border:1px solid black;}"]);var F=n(47130),M=n(39081);let W=()=>{let{pageType:e,subPageType:t,pageConst:n}=(0,s.y)(),{value:i}=(0,o.Lz)(),c=(0,l.Zl)(),{cti:u}=(0,F.iG)();return c?(0,r.jsxs)(M.I,{children:[(0,r.jsxs)("div",{children:[(0,r.jsx)("b",{children:"Page Type / Sub Page Type:"})," ",e," / ",t,(0,r.jsx)("br",{}),(0,r.jsx)("b",{children:"Page refmarker prefix:"})," ",i,!!n&&(0,r.jsxs)("span",{children:[(0,r.jsx)("br",{}),(0,r.jsx)("b",{children:"Page id:"})," ",n]}),!!u&&(0,r.jsxs)("span",{children:[(0,r.jsx)("br",{}),(0,r.jsx)("b",{children:"Owner CTI:"})," ",(0,r.jsx)(N.g,{cti:u})]}),(0,r.jsx)("br",{}),(0,r.jsx)(S,{}),(0,r.jsx)(a.Z,{children:(0,r.jsx)(L,{})})]}),(0,r.jsxs)("div",{children:[(0,r.jsx)(O,{}),(0,r.jsx)(P,{})]})]}):null}},88758:function(e,t,n){n.d(t,{E:function(){return i},k:function(){return a}});var r=n(10081);let i=(0,r.ZP)`
+    fragment NameListItemMetadata on Name {
+        id
+        primaryImage {
+            url
+            caption {
+                plainText
+            }
+            width
+            height
+        }
+        nameText {
+            text
+        }
+        primaryProfessions {
+            category {
+                text
+            }
+        }
+        professions {
+            profession {
+                text
+            }
+        }
+        knownForV2(limit: 1) {
+            credits {
+                title {
+                    id
+                    originalTitleText {
+                        text
+                    }
+                    titleText {
+                        text
+                    }
+                    titleType {
+                        canHaveEpisodes
+                    }
+                    releaseYear {
+                        year
+                        endYear
+                    }
+                }
+                episodeCredits(first: 0) {
+                    yearRange {
+                        year
+                        endYear
+                    }
+                }
+            }
+        }
+        bio {
+            displayableArticle {
+                body {
+                    plaidHtml(
+                        queryParams: $refTagQueryParam
+                        showOriginalTitleText: $originalTitleText
+                    )
+                }
+            }
+        }
+    }
+`,a=(0,r.ZP)`
+    fragment NameMeterRanking on Name {
+        meterRanking {
+            currentRank
+            rankChange {
+                changeDirection
+                difference
+            }
+        }
+    }
+`},36543:function(e,t,n){n.d(t,{$z:function(){return s},Dl:function(){return a},Zz:function(){return o},_A:function(){return c},f1:function(){return u},qp:function(){return d},vO:function(){return l}});var r=n(10081),i=n(85018);let a=(0,r.ZP)`
+    fragment TitleTopCastAndCrew on Title {
+        id
+        principalCreditsV2(
+            filter: { mode: "NARROWED" }
+            useEntitlement: false
+        ) {
+            grouping {
+                groupingId
+                text
+            }
+            credits(limit: 4) {
+                name {
+                    id
+                    nameText {
+                        text
+                    }
+                }
+            }
+        }
+    }
+`,l=(0,r.ZP)`
+    fragment TitleMeterRanking on Title {
+        meterRanking {
+            currentRank
+            rankChange {
+                changeDirection
+                difference
+            }
+        }
+    }
+`,s=(0,r.ZP)`
+    fragment TitleListItemMetadataEssentials on Title {
+        ...BaseTitleCard
+        series {
+            displayableEpisodeNumber {
+                displayableSeason {
+                    text
+                }
+                episodeNumber {
+                    text
+                }
+            }
+            series {
+                id
+                originalTitleText {
+                    text
+                }
+                releaseYear {
+                    endYear
+                    year
+                }
+                titleText {
+                    text
+                }
+            }
+        }
+    }
+    ${i.sq}
+`,o=(0,r.ZP)`
+    fragment TitleListItemMetadata on Title {
+        ...TitleListItemMetadataEssentials
+        latestTrailer {
+            id
+        }
+        plot {
+            plotText {
+                plainText
+            }
+        }
+        releaseDate {
+            day
+            month
+            year
+        }
+        productionStatus(useEntitlement: false) {
+            currentProductionStage {
+                id
+                text
+            }
+        }
+    }
+    ${s}
+`,c=(0,r.ZP)`
+    fragment TitleListItemMetascore on Title {
+        metacritic {
+            metascore {
+                score
+            }
+        }
+    }
+`,u=(0,r.ZP)`
+    fragment TitleTotalEpisodes on Title {
+        episodes {
+            episodes(first: 0) {
+                total
+            }
+        }
+    }
+`,d=(0,r.ZP)`
+    fragment TitleListFacetFields on TitleListItemSearchConnection {
+        genres: facet(facetField: GENRES) {
+            filterId
+            text
+            total
+        }
+
+        keywords: facet(facetField: KEYWORDS) {
+            filterId
+            text
+            total
+        }
+
+        watchOptions: facet(facetField: WATCH_PROVIDERS) {
+            filterId
+            text
+            total
+        }
+
+        titleTypes: facet(facetField: TITLE_TYPE) {
+            filterId
+            text
+            total
+        }
+    }
+`},86528:function(e,t,n){var r=n(52322);n(2784);var i=n(27613);t.Z=e=>{let{children:t}=e;return(0,i.Z)()?(0,r.jsx)(r.Fragment,{children:t}):null}},14481:function(e,t,n){n.d(t,{E5:function(){return b},HL:function(){return g},Kz:function(){return T},PY:function(){return E},Q0:function(){return c},QT:function(){return w},ax:function(){return h},hc:function(){return l},iZ:function(){return x},n4:function(){return s},p$:function(){return u},pU:function(){return y},qM:function(){return v},v_:function(){return j},zF:function(){return m}});let r="[0-9]{7,19}",i=`[a-z]{2}${r}`,a=`ch${r}`,l=`co${r}`,s=`in${r}`,o=`li${r}`,c=`ls${r}`,u=`nm${r}`,d=`rg${r}`,x=`rm${r}`,f=`rw${r}`,h=`tt${r}`,p=`ev${r}`,g="ur[0-9]{7,}",m=`vi${r}`;new RegExp(r);let T=new RegExp(i);new RegExp(a),new RegExp(l),new RegExp(s),new RegExp(o);let j=new RegExp(c);new RegExp(u),RegExp("[\\w-]{11,22}");let b=new RegExp(d),E=new RegExp(x);new RegExp(f);let y=new RegExp(h);new RegExp(p),new RegExp(g);let v=new RegExp(m),w=RegExp("p\\.[a-z0-9]+");RegExp("amzn1\\.imdb\\.concept\\.discussion_original_post\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"),RegExp(`.*/title/${h}/`)},82338:function(e,t,n){function r(e,t,n){let r="";return e&&t?r=e===t?e.toString():`${e}–${t}`:e&&n&&!t?r=`${e}– `:e&&(r=`${e}`),r}function i(e,t){if(e)return r(e.year,e.endYear,t)}n.d(t,{X:function(){return r},y:function(){return i}})},63370:function(e,t,n){n.d(t,{K:function(){return a},L:function(){return l}});var r=n(31626),i=n(86958);function a(e){let{originalTitleText:t,titleText:n}=e,r=(0,i.B)().context;if(t||n)return l(r,t,n)}function l(e,t,n){return(0,r.ZP)(e)?s(t):s(n)}function s(e){return e?"string"==typeof e?e:e.text:void 0}},31626:function(e,t,n){n.d(t,{z5:function(){return a}});var r=n(86958);let i=e=>!!e.sidecar?.localizationResponse?.isOriginalTitlePreferenceSet,a=()=>{let{context:e}=(0,r.B)();return i(e)};t.ZP=i},6935:function(e,t,n){n.d(t,{Gs:function(){return i},K0:function(){return r},ff:function(){return a}});let r=function(e,t){let n,r=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if(e&&e.url&&e.height&&e.width){let i=e.caption?.plainText||t;n={url:e.url,maxHeight:e.height,maxWidth:e.width,caption:r?t:i}}return n},i=(e,t)=>{let n;return e&&e.url&&e.height&&e.width&&t&&(n={url:e.url,maxHeight:e.height,maxWidth:e.width,caption:t}),n},a=e=>{let t;return e&&e.url&&e.height&&e.width&&e.caption&&(t={url:e.url,maxHeight:e.height,maxWidth:e.width,caption:e.caption}),t}},93776:function(e,t,n){n.d(t,{t:function(){return i}});var r=n(14481);let i=e=>!!e&&r.QT.test(e)},42516:function(e,t,n){n.d(t,{O:function(){return a}});var r=n(14481);let i=RegExp(`^${r.HL}$`),a=e=>i.test(e)}}]);

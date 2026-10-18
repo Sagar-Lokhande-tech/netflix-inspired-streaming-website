@@ -1,0 +1,280 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[1177],{85018:function(e,t,n){n.d(t,{F4:function(){return a},sq:function(){return i},uN:function(){return l}});var r=n(10081);let i=(0,r.ZP)`
+    fragment BaseTitleCard on Title {
+        id
+        titleText {
+            text
+        }
+        titleType {
+            id
+            text
+            canHaveEpisodes
+            displayableProperty {
+                value {
+                    plainText
+                }
+            }
+        }
+        originalTitleText {
+            text
+        }
+        primaryImage {
+            id
+            width
+            height
+            url
+            caption {
+                plainText
+            }
+        }
+        releaseYear {
+            year
+            endYear
+        }
+        ratingsSummary {
+            aggregateRating
+            voteCount
+        }
+        runtime {
+            seconds
+        }
+        certificate {
+            rating
+        }
+        canRate {
+            isRatable
+        }
+        titleGenres {
+            genres(limit: 3) {
+                genre {
+                    text
+                }
+            }
+        }
+    }
+`,a=(0,r.ZP)`
+    fragment TitleCardTrailer on Title {
+        latestTrailer {
+            id
+        }
+    }
+`,l=(0,r.ZP)`
+    fragment PersonalizedTitleCardUserRating on Title {
+        userRating @include(if: $includeUserRating) {
+            value
+        }
+    }
+`},47130:function(e,t,n){n.d(t,{AU:function(){return l},iG:function(){return o}});var r=n(52322),i=n(2784);let a=i.createContext({}),l=e=>{let{children:t,value:n}=e;return(0,r.jsx)(a.Provider,{value:n,children:t})},o=()=>i.useContext(a)},89859:function(e,t,n){n.d(t,{B:function(){return q}});var r=n(52322),i=n(2784),a=n(86528),l=n(2759),o=n(49996),s=n(11438),c=n(88169),u=n(45455),d=n.n(u),f=n(86958),x=n(27613),h=n(84314),p=n(4363),g=n(86704),m=n(19596);let b=e=>{let{title:t,children:n}=e,[a,l]=(0,i.useState)(!1);return(0,r.jsxs)(j,{children:[(0,r.jsx)(c.OutlineButton,{onSelect:()=>l(!a),onColor:"textPrimary",postIcon:a?"expand-less":"expand-more",children:t}),a?(0,r.jsx)(T,{children:n}):null]})},j=m.default.div.withConfig({componentId:"sc-32f51c74-0"})(["padding:0.1rem;display:flex;flex-direction:column;align-items:flex-end;"]),T=m.default.div.withConfig({componentId:"sc-32f51c74-1"})(["padding-top:",";padding-bottom:",";"],g.spacing.xs,g.spacing.xs);var y=n(10081);let w=(0,y.ZP)`
+    fragment EntitlementTier on TestEntitlement {
+        entitlement
+        result
+    }
+`,v=(0,y.ZP)`
+    query debugEntitlementTiers {
+        testEntitlements {
+            ...EntitlementTier
+        }
+    }
+    ${w}
+`;var $=n(18894);$.Ij,$.IJ;let E=()=>{let e=(0,h.n)(),t=(0,x.Z)(),n=(0,l.Zl)()&&e&&t,[{data:i,fetching:a,error:o}]=(0,p.E)({context:{serverSideCacheable:!1,personalized:!0},query:v,pause:!n});return n?a?(0,r.jsx)(c.Loader,{}):o?(0,r.jsx)("span",{children:"Error, try again."}):(0,r.jsx)(b,{title:"Entitlement status",children:(0,r.jsx)(P,{data:i})}):null},P=e=>{let{data:t}=e,n=(0,f.B)().context,i=!d()((0,$.vi)(n));return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)("b",{children:"Current entitlements:"}),i?(0,r.jsx)("i",{children:"(With overrides)"}):(0,r.jsx)("i",{children:"No overrides"}),(0,r.jsx)("br",{}),t?.testEntitlements?.map(e=>r.jsxs("div",{children:[r.jsxs("b",{children:[e.entitlement,":"]}),e.result]},`current-tier-${e.entitlement}`))]})};var R=n(11778),C=n(25436),I=n(14481);let k=e=>!!e&&I.QT.test(e);var Z=n(42516);let L=(0,y.ZP)`
+    query DebugBarProfileIdToUserId($profileId: ID!) {
+        userProfile(input: { profileId: $profileId }) {
+            userId
+        }
+    }
+`,z=()=>{let e;let{pageType:t,pageConst:n}=(0,o.y)(),i=t===C.PageType.USER,a=k(n),l=(0,Z.O)(n??""),[{data:s,fetching:u,error:d}]=(0,p.E)({context:{serverSideCacheable:!1,personalized:!0},query:L,variables:{profileId:n},pause:!i||!a});if(!i||!n)return null;let f=(0,R.isProdStage)()?"https://kamino.imdb.amazon.dev":"https://beta.kamino.imdb.amazon.dev";return(l?e=n:a&&s?.userProfile?.userId&&(e=s.userProfile.userId),u&&a)?(0,r.jsx)(c.Loader,{}):d&&a?(0,r.jsx)("span",{children:"Error resolving userId."}):e?(0,r.jsxs)("span",{children:[(0,r.jsx)("br",{}),(0,r.jsx)("b",{children:"Kamino:"})," ",(0,r.jsx)(c.TextLink,{href:`${f}/?query=${e}`,text:e,type:"launch","aria-label":`Kamino: ${e}`})]}):(0,r.jsxs)("span",{children:[(0,r.jsx)("br",{}),(0,r.jsx)("b",{children:"Kamino:"})," Unable to resolve userId"]})};var _=n(85846);let M=()=>{let e=(0,_.ic)();return(0,r.jsxs)("span",{children:[(0,r.jsx)("b",{children:"Geolocation:"})," Always 98109/US on Amazon VPN.",(0,r.jsx)("br",{}),(0,r.jsx)("b",{children:"Watch options/showtimes location:"})," ",e.postalCodeLocation?.postalCode," /"," ",e.postalCodeLocation?.country]})};var N=n(81089);let S=()=>{let e=f.B().context.sidecar?.weblabs;return e?(0,r.jsx)(b,{title:"Page weblabs",children:(0,r.jsxs)(F,{children:[(0,r.jsx)("table",{children:(0,r.jsxs)("tbody",{children:[(0,r.jsxs)("tr",{children:[(0,r.jsx)("th",{children:"Treatment"}),(0,r.jsx)("th",{children:"Weblab"}),(0,r.jsx)("th",{children:"Code"}),(0,r.jsx)("th",{children:"MCM"}),(0,r.jsx)("th",{children:"APT"})]}),Object.entries(e).sort().map(e=>{let[t,n]=e;return(0,r.jsx)(O,{name:t,value:n},t)})]})}),(0,r.jsxs)("div",{children:["Note: To switch treatments use"," ",(0,r.jsx)(c.TextLink,{href:"https://w.amazon.com/bin/view/NeoWeblab/",inheritColor:!0,type:"launch",text:"NeoWeblab Plugin"})," ","(Must be on VPN)"]})]})}):null},O=e=>{let{name:t,value:n}=e;return(0,r.jsxs)("tr",{children:[(0,r.jsx)("td",{align:"center",children:Object.keys(n)?.[0]}),(0,r.jsx)("td",{align:"center",children:(0,r.jsx)(c.TextLink,{href:`https://weblab.amazon.com/wl/${t}`,type:"launch",text:t,inheritColor:!0})}),(0,r.jsx)("td",{align:"center",children:(0,r.jsx)(c.TextLink,{href:`https://code.amazon.com/search?term=${t}`,type:"launch",text:"link",inheritColor:!0})}),(0,r.jsx)("td",{align:"center",children:(0,r.jsx)(c.TextLink,{href:`https://mcm.amazon.com/search?full_text[predicate]=Equals&full_text[values][]=${t}`,type:"launch",text:"link",inheritColor:!0})}),(0,r.jsx)("td",{align:"center",children:(0,r.jsx)(c.TextLink,{href:`https://apttool.amazon.com/weblab/find/?weblabID=${t}`,type:"launch",text:"link",inheritColor:!0})})]})},F=m.default.div.withConfig({componentId:"sc-e8ca3606-0"})(["table,th,td{border:1px solid black;}"]);var W=n(47130),Y=n(39081);let q=()=>{let{pageType:e,subPageType:t,pageConst:n}=(0,o.y)(),{value:i}=(0,s.Lz)(),c=(0,l.Zl)(),{cti:u}=(0,W.iG)();return c?(0,r.jsxs)(Y.I,{children:[(0,r.jsxs)("div",{children:[(0,r.jsx)("b",{children:"Page Type / Sub Page Type:"})," ",e," / ",t,(0,r.jsx)("br",{}),(0,r.jsx)("b",{children:"Page refmarker prefix:"})," ",i,!!n&&(0,r.jsxs)("span",{children:[(0,r.jsx)("br",{}),(0,r.jsx)("b",{children:"Page id:"})," ",n]}),!!u&&(0,r.jsxs)("span",{children:[(0,r.jsx)("br",{}),(0,r.jsx)("b",{children:"Owner CTI:"})," ",(0,r.jsx)(N.g,{cti:u})]}),(0,r.jsx)("br",{}),(0,r.jsx)(M,{}),(0,r.jsx)(a.Z,{children:(0,r.jsx)(z,{})})]}),(0,r.jsxs)("div",{children:[(0,r.jsx)(S,{}),(0,r.jsx)(E,{})]})]}):null}},81089:function(e,t,n){n.d(t,{g:function(){return a}});var r=n(52322),i=n(88169);n(2784);let a=e=>{let{cti:t}=e,n=`https://t.corp.amazon.com/create/options?category=${t.category}&type=${t.type}&item=${t.item}&tags=imdb-next-debug-bar`,a=`${t?.category} / ${t?.type} / ${t?.item}`;return(0,r.jsx)(i.TextLink,{href:n,text:a,type:"launch",inheritColor:!0})}},39081:function(e,t,n){n.d(t,{I:function(){return l},P:function(){return a}});var r=n(86704),i=n(19596);let a=i.default.div.withConfig({componentId:"sc-1de5ae87-0"})(["position:relative;background-color:",";color:",";padding:0.25rem;width:100%;z-index:1;"," b{font-weight:bolder;}i{font-style:italic;}"],(0,r.getColorVarValue)("ipt-accent1-bg"),(0,r.getColorVarValue)("ipt-on-accent1-color"),(0,r.setTypographyType)("body")),l=(0,i.default)(a).withConfig({componentId:"sc-1de5ae87-1"})(["display:flex;justify-content:space-between;"])},73286:function(e,t,n){n.d(t,{W:function(){return i}});var r=n(52322);function i(e){return e&&0!==e.length?(0,r.jsx)(r.Fragment,{children:e.map(e=>(0,r.jsx)("link",{rel:"alternate",href:e.url,hrefLang:e.language},`href_lang_${e.language}`))}):null}n(2784)},88758:function(e,t,n){n.d(t,{E:function(){return i},k:function(){return a}});var r=n(10081);let i=(0,r.ZP)`
+    fragment NameListItemMetadata on Name {
+        id
+        primaryImage {
+            url
+            caption {
+                plainText
+            }
+            width
+            height
+        }
+        nameText {
+            text
+        }
+        primaryProfessions {
+            category {
+                text
+            }
+        }
+        professions {
+            profession {
+                text
+            }
+        }
+        knownForV2(limit: 1) {
+            credits {
+                title {
+                    id
+                    originalTitleText {
+                        text
+                    }
+                    titleText {
+                        text
+                    }
+                    titleType {
+                        canHaveEpisodes
+                    }
+                    releaseYear {
+                        year
+                        endYear
+                    }
+                }
+                episodeCredits(first: 0) {
+                    yearRange {
+                        year
+                        endYear
+                    }
+                }
+            }
+        }
+        bio {
+            displayableArticle {
+                body {
+                    plaidHtml(
+                        queryParams: $refTagQueryParam
+                        showOriginalTitleText: $originalTitleText
+                    )
+                }
+            }
+        }
+    }
+`,a=(0,r.ZP)`
+    fragment NameMeterRanking on Name {
+        meterRanking {
+            currentRank
+            rankChange {
+                changeDirection
+                difference
+            }
+        }
+    }
+`},36543:function(e,t,n){n.d(t,{$z:function(){return o},Dl:function(){return a},Zz:function(){return s},_A:function(){return c},f1:function(){return u},qp:function(){return d},vO:function(){return l}});var r=n(10081),i=n(85018);let a=(0,r.ZP)`
+    fragment TitleTopCastAndCrew on Title {
+        id
+        principalCreditsV2(
+            filter: { mode: "NARROWED" }
+            useEntitlement: false
+        ) {
+            grouping {
+                groupingId
+                text
+            }
+            credits(limit: 4) {
+                name {
+                    id
+                    nameText {
+                        text
+                    }
+                }
+            }
+        }
+    }
+`,l=(0,r.ZP)`
+    fragment TitleMeterRanking on Title {
+        meterRanking {
+            currentRank
+            rankChange {
+                changeDirection
+                difference
+            }
+        }
+    }
+`,o=(0,r.ZP)`
+    fragment TitleListItemMetadataEssentials on Title {
+        ...BaseTitleCard
+        series {
+            displayableEpisodeNumber {
+                displayableSeason {
+                    text
+                }
+                episodeNumber {
+                    text
+                }
+            }
+            series {
+                id
+                originalTitleText {
+                    text
+                }
+                releaseYear {
+                    endYear
+                    year
+                }
+                titleText {
+                    text
+                }
+            }
+        }
+    }
+    ${i.sq}
+`,s=(0,r.ZP)`
+    fragment TitleListItemMetadata on Title {
+        ...TitleListItemMetadataEssentials
+        latestTrailer {
+            id
+        }
+        plot {
+            plotText {
+                plainText
+            }
+        }
+        releaseDate {
+            day
+            month
+            year
+        }
+        productionStatus(useEntitlement: false) {
+            currentProductionStage {
+                id
+                text
+            }
+        }
+    }
+    ${o}
+`,c=(0,r.ZP)`
+    fragment TitleListItemMetascore on Title {
+        metacritic {
+            metascore {
+                score
+            }
+        }
+    }
+`,u=(0,r.ZP)`
+    fragment TitleTotalEpisodes on Title {
+        episodes {
+            episodes(first: 0) {
+                total
+            }
+        }
+    }
+`,d=(0,r.ZP)`
+    fragment TitleListFacetFields on TitleListItemSearchConnection {
+        genres: facet(facetField: GENRES) {
+            filterId
+            text
+            total
+        }
+
+        keywords: facet(facetField: KEYWORDS) {
+            filterId
+            text
+            total
+        }
+
+        watchOptions: facet(facetField: WATCH_PROVIDERS) {
+            filterId
+            text
+            total
+        }
+
+        titleTypes: facet(facetField: TITLE_TYPE) {
+            filterId
+            text
+            total
+        }
+    }
+`},86528:function(e,t,n){var r=n(52322);n(2784);var i=n(27613);t.Z=e=>{let{children:t}=e;return(0,i.Z)()?(0,r.jsx)(r.Fragment,{children:t}):null}},14481:function(e,t,n){n.d(t,{E5:function(){return T},HL:function(){return g},Kz:function(){return b},PY:function(){return y},Q0:function(){return c},QT:function(){return $},ax:function(){return h},hc:function(){return l},iZ:function(){return f},n4:function(){return o},p$:function(){return u},pU:function(){return w},qM:function(){return v},v_:function(){return j},zF:function(){return m}});let r="[0-9]{7,19}",i=`[a-z]{2}${r}`,a=`ch${r}`,l=`co${r}`,o=`in${r}`,s=`li${r}`,c=`ls${r}`,u=`nm${r}`,d=`rg${r}`,f=`rm${r}`,x=`rw${r}`,h=`tt${r}`,p=`ev${r}`,g="ur[0-9]{7,}",m=`vi${r}`;new RegExp(r);let b=new RegExp(i);new RegExp(a),new RegExp(l),new RegExp(o),new RegExp(s);let j=new RegExp(c);new RegExp(u),RegExp("[\\w-]{11,22}");let T=new RegExp(d),y=new RegExp(f);new RegExp(x);let w=new RegExp(h);new RegExp(p),new RegExp(g);let v=new RegExp(m),$=RegExp("p\\.[a-z0-9]+");RegExp("amzn1\\.imdb\\.concept\\.discussion_original_post\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"),RegExp(`.*/title/${h}/`)},82338:function(e,t,n){function r(e,t,n){let r="";return e&&t?r=e===t?e.toString():`${e}–${t}`:e&&n&&!t?r=`${e}– `:e&&(r=`${e}`),r}function i(e,t){if(e)return r(e.year,e.endYear,t)}n.d(t,{X:function(){return r},y:function(){return i}})},52154:function(e,t,n){n.d(t,{F2:function(){return c},PO:function(){return s},gA:function(){return u},y8:function(){return o}});var r=n(86704);let i="FMjpg",a=375/812,l=1920/1080;function o(e,t){return c(e,`${i}_UX${Math.floor(t)}_`)}function s(e,t){return c(e,`${i}_UY${Math.floor(t)}_`)}function c(e,t){let n=e.split("."),r=n.length-2;return n[r].indexOf("_V1_")>=0&&(n[r]+=t),n.join(".")}function u(e,t){let n="";if(!e.height||!e.width||!e.url)return n;let i=e.height,c=e.width,u=e.url,d=Object.values(r.breakpoints.breakpointsNumbers),f=!1;if(d.forEach((e,t)=>{let x=e>c,h=t===d.length-1;if(!f){if(x)n+=o(u,c)+` ${c}w`;else if(i<c)n+=o(u,e)+` ${e}w`;else{let t=c/i,o=e>=r.breakpoints.breakpointsNumbers.m?l:a,d=Math.min(Math.floor(e/t),Math.floor(e/o)),f=Math.floor(d*t);n+=s(u,d)+` ${f}w`}x||h?f=!0:n+=", "}}),t){let e=Math.min(2160,c);i<c?n+=`, ${o(u,e)} ${e}w`:n+=`, ${s(u,i)} ${e}w`}return n}},63370:function(e,t,n){n.d(t,{K:function(){return a},L:function(){return l}});var r=n(31626),i=n(86958);function a(e){let{originalTitleText:t,titleText:n}=e,r=(0,i.B)().context;if(t||n)return l(r,t,n)}function l(e,t,n){return(0,r.ZP)(e)?o(t):o(n)}function o(e){return e?"string"==typeof e?e:e.text:void 0}},31626:function(e,t,n){n.d(t,{z5:function(){return a}});var r=n(86958);let i=e=>!!e.sidecar?.localizationResponse?.isOriginalTitlePreferenceSet,a=()=>{let{context:e}=(0,r.B)();return i(e)};t.ZP=i},6935:function(e,t,n){n.d(t,{Gs:function(){return i},K0:function(){return r},ff:function(){return a}});let r=function(e,t){let n,r=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if(e&&e.url&&e.height&&e.width){let i=e.caption?.plainText||t;n={url:e.url,maxHeight:e.height,maxWidth:e.width,caption:r?t:i}}return n},i=(e,t)=>{let n;return e&&e.url&&e.height&&e.width&&t&&(n={url:e.url,maxHeight:e.height,maxWidth:e.width,caption:t}),n},a=e=>{let t;return e&&e.url&&e.height&&e.width&&e.caption&&(t={url:e.url,maxHeight:e.height,maxWidth:e.width,caption:e.caption}),t}},42516:function(e,t,n){n.d(t,{O:function(){return a}});var r=n(14481);let i=RegExp(`^${r.HL}$`),a=e=>i.test(e)}}]);

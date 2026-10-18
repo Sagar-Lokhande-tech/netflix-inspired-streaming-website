@@ -1,0 +1,1630 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="main">
+    <nav>
+      <span><img width="53" src="assets/images/logo.svg" alt="" /></span>
+      <div>
+        <!-- <button class="btn" >English</button> -->
+        <select id="languageSelect" class="language-select">
+          <option value="en">🌐 English</option>
+          <option value="hi">🌐 हिन्दी</option>
+          <option value="mr">🌐 मराठी</option>
+        </select>
+
+        <!-- <button class=" btn btn-red-sm">Sign Out</button> -->
+        <button class="btn btn-red-sm" onclick="signOut()">Sign Out&gt;</button>
+      </div>
+    </nav>
+    <div class="box"></div>
+    <div class="hero">
+      <span data-translate="hero-title">
+        Unlimited movies,<br />
+        shows, and more</span>
+      <span>Starts at ₹149. Cancel at any time.</span>
+      <span>Ready to watch? Enter your email to create or restart your membership.</span>
+      <div class="email-box"> <input class="btn1" type="email" id="email" placeholder="Enter your email">
+        <button class="btn2" onclick="startMembership()">Get Started &gt;</button>
+        <br>
+        <p id="message" style="margin-top: 15px; text-align: center; color:#0f0;"></p>
+      </div>
+    </div>
+    <div class="separation"></div>
+  </div>
+
+
+
+
+  <div class="navbar">
+  </div>
+  <div class="navbar">
+    <div class="logo">
+      NETFLIX
+    </div>
+    <input type="text" id="search" class="search-box" placeholder="Search Movies...">
+  </div>
+
+  <div class="categories">
+    <button onclick="filterContent('Movie')">Movies</button>
+    <button onclick="filterContent('TV')">TV Series</button>
+    <button onclick="filterContent('Animation')">Animation</button>
+    <button onclick="showAll()">All</button>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="king">
+
+    <h1>Streaming Platforms</h1>
+
+    <div class="slider">
+      <div class="track">
+
+        <div class="platform">
+          <a href="https://www.netflix.com/in/" target="_blank">
+            <img src="netflix.jpg" alt="Platform 1">
+          </a>
+        </div>
+
+        <div class="platform">
+          <a href="https://www.hotstar.com/in/home" target="_blank">
+            <img src="jiohotstar.avif" alt="Platform 2">
+          </a>
+        </div>
+
+        <div class="platform">
+          <a href="https://www.aha.video/app/login" target="_blank">
+            <img src="aha.png" alt="Platform 3">
+          </a>
+        </div>
+
+        <div class="platform">
+          <a href="https://www.zee5.com/" target="_blank">
+            <img src="zee5.png" alt="Platform 4">
+          </a>
+        </div>
+
+        <div class="platform">
+          <a href="https://www.primevideo.com/offers/nonprimehomepage/ref=dvm_pds_amz_in_as_s_gm_140_mkw_p452-kw49-cr548118-c?mrntrk=go_cmp-6636914552_adg-84577172608_ad-766487322432_kwd-329004444664_dev-c_ext-"
+            target="_blank">
+            <img src="primevideo.png" alt="Platform 5">
+          </a>
+        </div>
+
+        <div class="platform">
+          <a href="https://www.sonyliv.com/?Origin=https:/www.sonyliv.com&gad_source=1&gad_campaignid=21642907616&gbraid=0AAAAACRMBGy1sdkkINPozgscMa-hLJqhA&gclid=Cj0KCQjw3K7RBhDJARIsAKRtP5SdVBF3s_fZ6FKaYFfJhKGjdbpusm7Uku_TwmYTGZxRQBXB2yTYO0caAsjgEALw_wcB"
+            target="_blank">
+            <img src="soniliv.png" alt="Platform 6">
+          </a>
+        </div>
+
+        <div class="platform">
+          <a href="https://tv.apple.com/" target="_blank">
+            <img src="appletv.png" alt="Platform 7">
+          </a>
+        </div>
+
+        <div class="platform">
+          <a href="https://tv.apple.com/" target="_blank">
+            <img src="appletvplus.jpg" alt="Platform 8">
+          </a>
+        </div>
+
+        <div class="platform">
+          <a href="https://www.crunchyroll.com/?utm_source=google&utm_medium=paid_cr&utm_campaign=CR_SV_INDI_IND_HE_FTS_SEM_SEB_WEB_TRADEMARK-MISCTERMS&utm_term=crunchyroll%20login&referrer=google_paid_cr_CR_SV_INDI_IND_HE_FTS_SEM_SEB_WEB_TRADEMARK-MISCTERMS&gad_source=1&gad_campaignid=23907039806&gbraid=0AAAAADmLVRaEuQkmz66YgJNVX_KKkILHC&gclid=Cj0KCQjw3K7RBhDJARIsAKRtP5RMQkfvkRQvLIN58bRwE3nGkwh7vso-2TQwRCwokGiis9ptnoAek2kaAum8EALw_wcB"
+            target="_blank">
+            <img src="crunchyroll.jpg" alt="Platform 9">
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <section class="section" id="trendingSection">
+
+    <h2>Trending Now</h2>
+
+    <div class="row" id="trendingRow">
+
+      <!-- 1 -->
+      <div class="movies" data-title="Dhurandhar" data-videos=" click.mp4">
+
+        <img src="dhu3.jpg" alt="Dhurandhar">
+
+        <div class="movie-title">
+          Dhurandhar
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+
+      <!-- 2 -->
+      <div class="movies" data-title="Youth" data-videos="click2.mp4">
+
+        <img src="youth.jpg" alt="Youth">
+
+        <div class="movie-title">
+          Youth
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+
+      <!-- 3 -->
+      <div class="movies" data-title="Kapil Show" data-videos="click3.mp4">
+
+        <img src="kapil show.jpg" alt="Kapil Show">
+
+        <div class="movie-title">
+          Kapil Show
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+
+      <!-- 4 -->
+      <div class="movies" data-title="If Wishes Could Kill" data-videos="click4.mp4">
+
+        <img src="If whish.jpg" alt="If Wishes Could Kill">
+
+        <div class="movie-title">
+          If Wishes Could Kill
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+
+      <!-- 5 -->
+      <div class="movies" data-title="Ustaad Bhagat Singh" data-videos="click5.mp4">
+
+        <img src="ustand.jpg" alt="Ustaad Bhagat Singh">
+
+        <div class="movie-title">
+          Ustaad Bhagat Singh
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+
+      <!-- 6 -->
+      <div class="movies" data-title="Raakaasa" data-videos="click.mp4">
+
+        <img src="Raakaasa.jpg" alt="Raakaasa">
+
+        <div class="movie-title">
+          Raakaasa
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+
+      <!-- 7 -->
+      <div class="movies" data-title="My Royal Nemesis" data-videos="click2.mp4">
+
+        <img src="My.jpg" alt="My Royal Nemesis">
+
+        <div class="movie-title">
+          My Royal Nemesis
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+
+      <!-- 8 -->
+      <div class="movies" data-title="Bharathanatyam 2 Mohiniyattam" data-videos="click3.mp4">
+
+        <img src="bhara.jpg" alt="Bharathanatyam 2 Mohiniyattam">
+
+        <div class="movie-title">
+          Bharathanatyam 2 Mohiniyattam
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+
+      <!-- 9 -->
+      <div class="movies" data-title="Toaster" data-videos="click4.mp4">
+
+        <img src="tost.jpg" alt="Toaster">
+
+        <div class="movie-title">
+          Toaster
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+
+      <!-- 10 -->
+      <div class="movies" data-title="BackLash" data-videos="click5.mp4">
+
+        <img src="backlash.jpg" alt="BackLash">
+
+        <div class="movie-title">
+          BackLash
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <div class="movie-grid" id="movieGrid">
+  </div>
+
+
+  <section class="hsection" id="recentSection">
+
+    <h2>Recently Added</h2>
+
+    <div class="hrow" id="recentRow">
+
+
+      <!-- 1 -->
+      <div class="movies" data-title="Aakhri" data-videos="click5.mp4">
+
+        <img src="Aakhri.jpg" alt="Aakhri">
+
+        <div class="movie-title">
+          Aakhri
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+
+      <!-- 2 -->
+      <div class="movies" data-title="Crazy Old Lady" data-videos="click5.mp4">
+
+        <img src="crazy.jpg" alt="Crazy Old Lady">
+
+        <div class="movie-title">
+          Crazy Old Lady
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+
+      <!-- 3 -->
+      <div class="movies" data-title="Until" data-videos="click5.mp4">
+
+        <img src="until.jpg" alt="Until">
+
+        <div class="movie-title">
+          Until
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+
+      <!-- 4 -->
+      <div class="movies" data-title="Raakh" data-videos="click5.mp4">
+
+        <img src="raakh.jpeg" alt="Raakh">
+
+        <div class="movie-title">
+          Raakh
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+
+      <!-- 5 -->
+      <div class="movies" data-title="Furious" data-videos="click5.mp4">
+
+        <img src="furious.jpg" alt="Furious">
+
+        <div class="movie-title">
+          Furious
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+
+      <!-- 6 -->
+      <div class="movies" data-title="Disclosure" data-videos="click5.mp4">
+
+        <img src="disclosure.jpg" alt="Disclosure">
+
+        <div class="movie-title">
+          Disclosure
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+
+      <!-- 7 -->
+      <div class="movies" data-title="Whistle" data-videos="click5.mp4">
+
+        <img src="whistle.jpg" alt="Whistle">
+
+        <div class="movie-title">
+          Whistle
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+
+      <!-- 8 -->
+      <div class="movies" data-title="Karuppu" data-videos="click5.mp4">
+
+        <img src="Karuppu.jpg" alt="Karuppu">
+
+        <div class="movie-title">
+          Karuppu
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+
+      <!-- 9 -->
+      <div class="movies" data-title="My Royal Nemesis" data-videos="click5.mp4">
+
+        <img src="my.jpg" alt="My Royal Nemesis">
+
+        <div class="movie-title">
+          My Royal Nemesis
+        </div>
+
+        <button type="button" class="play-btn" onclick="playMovie(this)">
+          ▶ Play
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+  <div id="videoModal" class="video-modal">
+
+    <div class="video-container">
+
+      <button type="button" class="close-video" onclick="closeVideo()">
+        ✕
+      </button>
+
+      <video id="movieVideo" controls controlsList="nodownload" oncontextmenu="return false;">
+
+        <source id="videoSource" src="" type="video/mp4">
+
+        Your browser does not support video.
+
+      </video>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <section class="movies-section filter-section movie-category">
+    <h2>Popular on Netflix</h2>
+    <div class="movies-row" id="moviesRow"></div>
+  </section>
+
+
+
+  <section class="movies-type filter-section movie-category">
+    <h2>Bollywood Movies</h2>
+    <div class="movies-fow" id="moviesFow"></div>
+  </section>
+
+
+  <section class="movies-marathi filter-section movie-category">
+    <h2>Popular Marathi Movies</h2>
+    <div class="movies-mar" id="moviesMar"></div>
+  </section>
+
+
+
+
+  <section class="movies-series filter-section tv-category">
+    <h2>Popular Series What to watch
+    </h2>
+
+    <div class="movies-low" id="moviesLow"></div>
+  </section>
+  <div class="modal1" id="videoModal2">
+    <div class="modal-content1">
+
+      <span class="close" onclick="closeModal()">&times;</span>
+
+      <a href="https://www.netflix.com/in/title/81493411" target="_blank">
+        The New Legends of Monkey
+      </a>
+      <br>
+      <a href="https://www.netflix.com/in/title/81436990" target="_blank">
+        Typewrite
+
+      </a>
+      <br>
+      <a href="https://www.netflix.com/in/title/81537" target="_blank">
+        The Fame Game
+      </a>
+      <br>
+      <a href="https://www.netflix.com/in/title/81586376" target="_blank">
+        Ghoul (miniseries)
+      </a>
+      <br>
+      <a href="https://www.netflix.com/in/title/81305487" target="_blank">
+        The Letter for the King
+      </a>
+      <br>
+      <a href="https://www.netflix.com/in/title/81305487" target="_blank">
+        Avatar: The Last Airbender
+      </a>
+      <br>
+      <a href="https://www.netflix.com/in/title/81305487" target="_blank">
+        Mandala Murders
+      </a>
+      <br>
+      <a href="https://www.netflix.com/in/title/81305487" target="_blank">
+        Jupiter's Legacy
+      </a>
+
+    </div>
+  </div>
+
+
+
+
+
+  <section class="movies-south filter-section movie-category">
+    <h2>New South Movies</h2>
+
+    <div class="movies-big" id="moviesBig"></div>
+  </section>
+  <div class="modal1" id="videoModal2">
+    <div class="modal-content1">
+
+      <span class="close" onclick="closeModal()">&times;</span>
+
+    </div>
+  </div>
+
+
+
+
+
+  <section class="movies-Anime filter-section animation-category">
+    <h2>Top-10 Anime
+    </h2>
+
+    <div class="movies-ani" id="moviesAni"></div>
+  </section>
+  <div class="modal3" id="videoModal3">
+    <div class="modal-content3">
+
+      <span class="close" onclick="closeModal()">&times;</span>
+
+    </div>
+  </div>
+
+
+ 
+
+
+  <section class="movies-All">
+    <h2>All About
+    </h2>
+
+    <div class="movies-all" id="moviesAll"></div>
+  </section>
+  <div class="modal4" id="videoModal4">
+    <div class="modal-content4">
+
+      <span class="close" onclick="closeModal()">&times;</span>
+
+    </div>
+  </div>
+
+  <section class="movies-All1">
+    <!-- <h2>All About
+        </h2> -->
+
+    <div class="movies-all1" id="moviesAll1"></div>
+  </section>
+  <div class="modal5" id="videoModal4">
+    <div class="modal-content5">
+
+      <span class="close" onclick="closeModal()">&times;</span>
+
+    </div>
+  </div>
+
+
+  <section class="movies-All2">
+    <!-- <h2>All About
+        </h2> -->
+
+    <div class="movies-all2" id="moviesAll2"></div>
+  </section>
+  <div class="modal" id="videoModal">
+    <div class="modal-content">
+
+      <span class="close" onclick="closeModal()">&times;</span>
+
+    </div>
+  </div>
+
+  <section class="movies-All3">
+    <!-- <h2>All About
+        </h2> -->
+
+    <div class="movies-all3" id="moviesAll3"></div>
+  </section>
+  <div class="modal" id="videoModal">
+    <div class="modal-content">
+
+      <span class="close" onclick="closeModal()">&times;</span>
+
+    </div>
+  </div>
+
+
+  <section class="movies-All4">
+    <!-- <h2>All About
+        </h2> -->
+
+    <div class="movies-all4" id="moviesAll4"></div>
+  </section>
+  <div class="modal" id="videoModal">
+    <div class="modal-content">
+
+      <span class="close" onclick="closeModal()">&times;</span>
+
+    </div>
+  </div>
+
+ 
+
+
+
+  <section class="faq">
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        What is Netflix?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Netflix is a streaming service that offers a wide variety of
+          award-winning TV shows, movies, anime, documentaries, and more.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        How much does Netflix cost?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Watch Netflix on your smartphone, tablet, Smart TV, laptop,
+          or streaming device for a fixed monthly fee.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Where can I watch?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Watch anywhere, anytime. Sign in with your Netflix account to
+          watch instantly on the web or on devices connected to the internet.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        How do I cancel?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Netflix is flexible. There are no annoying contracts and no
+          commitments. You can easily cancel your account online.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        What can I watch on Netflix?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Netflix has an extensive library of feature films, documentaries,
+          TV shows, anime, award-winning Netflix originals, and more.
+          Watch as much as you want, anytime you want.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        Is Netflix good for kids?
+        <span>+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          The Netflix Kids experience is included in your membership and gives
+          parents control while children enjoy family-friendly TV shows, movies,
+          and animated content in a dedicated space designed just for them.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+
+  <form class="login-form" id="loginForm">
+
+    <input type="email" id="email" placeholder="Enter your email">
+
+    <button type="submit">
+      Login-Up
+    </button>
+
+    <p id="emailMessage"></p>
+
+  </form>
+
+
+ 
+
+  <footer class="footer">
+    <div class="footer-content">
+
+      <h2 class="footer-logo">NETFLIX CLONE</h2>
+
+      <p class="copyright">
+        © 2026 All Rights Reserved
+      </p>
+
+      <p class="creator">
+        Created with ❤️👻 by <span>Sagar</span>✌️
+      </p>
+
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">Movies</a>
+        <a href="#">TV Shows</a>
+        <a href="#">Contact</a>
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+  <script>
+
+    const track = document.querySelector('.track');
+
+    track.addEventListener('mouseenter', () => {
+      track.style.animationPlayState = 'paused';
+    });
+
+    track.addEventListener('mouseleave', () => {
+      track.style.animationPlayState = 'running';
+    });
+
+
+
+
+
+    const content = [
+
+    ];
+
+    const grid = document.getElementById("movieGrid");
+
+    function displayMovies(data) {
+      grid.innerHTML = "";
+
+      data.forEach(item => {
+        grid.innerHTML += `
+            <div class="card">
+                <img src="${item.image}" alt="${item.title}">
+                <h3>${item.title}</h3>
+            </div>
+            `;
+      });
+    }
+
+
+ 
+
+    displayMovies(content);
+    // ========================================
+    // CATEGORY FILTER
+    // ========================================
+
+    function filterContent(type) {
+
+      // Hide movieGrid
+      const movieGrid = document.getElementById("movieGrid");
+
+      if (movieGrid) {
+        movieGrid.style.display = "none";
+      }
+
+
+      // Get all sections
+      const sections = document.querySelectorAll(".filter-section");
+
+      sections.forEach(section => {
+
+        // Movie button
+        if (type === "Movie") {
+
+          if (section.classList.contains("movie-category")) {
+            section.style.display = "";
+          } else {
+            section.style.display = "none";
+          }
+
+        }
+
+
+        // TV Series button
+        else if (type === "TV") {
+
+          if (section.classList.contains("tv-category")) {
+            section.style.display = "";
+          } else {
+            section.style.display = "none";
+          }
+
+        }
+
+
+        // Animation button
+        else if (type === "Animation") {
+
+          if (section.classList.contains("animation-category")) {
+            section.style.display = "";
+          } else {
+            section.style.display = "none";
+          }
+
+        }
+
+      });
+
+
+      // Hide trending and recently added
+      document.getElementById("trendingSection").style.display = "none";
+      document.getElementById("recentSection").style.display = "none";
+    }
+
+
+    // ========================================
+    // ALL BUTTON
+    // ========================================
+
+    function showAll() {
+
+      const movieGrid = document.getElementById("movieGrid");
+
+      if (movieGrid) {
+        movieGrid.style.display = "none";
+      }
+
+
+      // Show all filter sections
+      const sections = document.querySelectorAll(".filter-section");
+
+      sections.forEach(section => {
+        section.style.display = "";
+      });
+
+
+      // Show Trending
+      const trending = document.getElementById("trendingSection");
+
+      if (trending) {
+        trending.style.display = "";
+      }
+
+
+      // Show Recently Added
+      const recent = document.getElementById("recentSection");
+
+      if (recent) {
+        recent.style.display = "";
+      }
+
+    }
+
+ 
+
+ 
+    const movies = [
+      {
+        title: "Stranger Things",
+        image: "https://occ-0-8407-2218.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABd4ufZ0MVAnGJT0lo5yY2IckTftPvViSfqgcClp-8NCTzZaByMUGhMDuPZZtljfbCF4bZAAYKsxbr_DLfj0X9E_h7RNCLIz8IoAAvtouYLpW-5CXT8PVzGJmIg.jpg?r=eb2",
+        link: "https://www.netflix.com/in/title/80057281"
+      },
+      {
+        title: "Money Heist",
+        image: "https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQdJ5zNiFdqp68upLroZ4-K9kYdbZAwlVX7I-UQrcYw8N05mmdam79LvRASRWx1rY5Sh4L8pLXU4wyH51VvnVWuDqPImpOKPxKIIZr0_tVJR2cEGTbquL8HIQcjYBxCTfvgQekGNcq531JbLCerZnV8CFvjI.jpg?r=a04",
+        link: "https://www.netflix.com/in/title/80192098"
+      },
+      {
+        title: "Wednesday",
+        image: "https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABRi7beSqIJZKFFiEk79E9C_6SgfO5FBL9NNVsjFzsk18NdhwN3uFtB_w8Tkj2BVxDKNEqmjtHrjd-gGqJVfHJ8tn5Khel07dl4ZUHMB97-w2WHj8nVh26D47cg.jpg?r=178",
+        link: "https://www.netflix.com/in/title/81231974"
+      },
+      {
+        title: "Dark",
+        image: "https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABfuXp32QRj6HhCjJPiZo3H_K3IbY6s2_lVkBeEo9S6x9lPKdehGuYucgmg4U6IAuFhPItBTnEXncPaI_EwqNNgPgvhz-xpU1YnJ4.jpg?r=881",
+        link: "https://www.netflix.com/in/title/80100172"
+      },
+      {
+        title: "Extraction",
+        image: "https://occ-0-8407-444.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABQIm6Hs8vcdXl7FEiXQT5bvwjSAoSr9y0KUfyCwM9DRdLsKlwMqMne9JGTDjyMKC3oc59QSxdvIGOSW-37wmKc3DL2rt4OHmhjLJ.jpg?r=775",
+        link: "https://www.netflix.com/in/title/80230399"
+      }
+    ];
+
+
+    const moviesRow = document.getElementById("moviesRow");
+
+    movies.forEach(movie => {
+      const card = document.createElement("div");
+      card.classList.add("movie-card");
+
+      card.innerHTML = `
+      <img src="${movie.image}" alt="${movie.title}">
+      <div class="movie-info">
+        <h3>${movie.title}</h3>
+        <button class="play-btn">▶ Play</button>
+      </div>
+    `;
+
+      card.querySelector(".play-btn").addEventListener("click", () => {
+        window.open(movie.link, "_blank");
+      });
+
+      moviesRow.appendChild(card);
+    });
+
+    const movie = [
+      {
+        title: "Jawan",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCyyy8tN3SUIeRBnx9jVkIuQN9kOsMhPJlZQ&s",
+        link: "https://www.netflix.com/in/title/81493411"
+      },
+      {
+        title: "Animal",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX3n_3qtQ0umlP1u7m_ksclU3qZ1s8IJZYQw&scrop",
+        link: "https://www.netflix.com/in/title/81436990"
+      },
+      {
+        title: "Darlings",
+        image: "https://occ-0-8407-114.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABdggpB1uP0KaBE__zud6IPUEcJKXTjOo9wVOSDNlEBblwDjpdXbO6iTaiXkPBoOLavjyng5XE_Io-doojRqkLLyuOgWgZKWW9-gu.jpg?r=a2e",
+        link: "https://www.netflix.com/in/title/81537953"
+      },
+      {
+        title: "Jaane Jaan",
+        image: "https://occ-0-8407-92.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABeG35qkYrNCZPDqkui62f98jHwLeigbUadAdZXRyOBJWNll80B-YMRDXCZO7QvjblmdMz58q10fzbeVtDIGxLz02aiJXRGcLZaORWxR-RNRLaGADW7MW9z9CPA.jpg?r=902",
+        link: "https://www.netflix.com/in/title/81586376"
+      },
+      {
+        title: "Chor Nikal Ke Bhaga",
+        image: "https://occ-0-8407-116.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABS-fnmqJHVQB0gQ_5-APp9JODTaqghyEfxIwkt7cjsul674wODJJXdf0QCKqnuzo526HAsXqjSRq-xgvQ1bAjP7fYwahwXLbUudCIX9DEhbh0TdHTAPm_lBDiA.jpg?r=484",
+        link: "https://www.netflix.com/in/title/81305487"
+      }
+    ];
+
+    const moviesFow = document.getElementById("moviesFow");
+
+    movie.forEach(item => {
+      const card = document.createElement("div");
+      card.classList.add("movie-card");
+
+      card.innerHTML = `
+    <img src="${item.image}" alt="${item.title}">
+    <div class="movie-info">
+      <h3>${item.title}</h3>
+      <button class="play-btn">▶ Play</button>
+    </div>
+  `;
+
+      card.querySelector(".play-btn").addEventListener("click", () => {
+        window.open(item.link, "_blank");
+      });
+
+      moviesFow.appendChild(card);
+    });
+
+
+
+
+    const moviemarathi = [
+      {
+        title: "raja shivaji ",
+        image: "https://i.ytimg.com/vi/3CXt4GtjLmc/hqdefault.jpg",
+        link: "https://www.youtube.com/watch?v=rAZJ_sdHG70"
+      },
+      {
+        title: "phullwanti ",
+        image: "https://akamaividz2.zee5.com/image/upload/w_1170,h_658,c_scale/resources/0-0-1z5825749/list/1920x1080list14838d82b3574b7c86c06bc177fecbf8a1eab7462abd49b9a79ee966774c39b8.jpg",
+        link: "https://www.primevideo.com/detail/0GATXIQM0ZO1HZVDVOLXZT5LA0"
+      },
+      {
+        title: "natsamrat ",
+        image: "https://m.media-amazon.com/images/S/pv-target-images/5836208596e4702385af95d32f5b636c9151bf29ba787d321a3716b2a749a658.jpg",
+        link: "https://www.primevideo.com/detail/0G0ZCYHH97NPDTQMI9VCZWGJSM"
+      },
+      {
+        title: " alyad palyad",
+        image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/alyad-palyad-et00398653-1716022280.jpg",
+        link: "https://in.bookmyshow.com/movies/nanded/alyad-palyad/ET00398653"
+      },
+      {
+        title: "ved",
+        image: "https://i.ytimg.com/vi/FY5VHRkrZVc/maxresdefault.jpg",
+        link: "https://www.hotstar.com/in/movies/ved/1260139813"
+      }
+    ];
+
+    const moviesMar = document.getElementById("moviesMar");
+
+    moviemarathi.forEach(movie => {
+      const card = document.createElement("div");
+      card.classList.add("movie-card");
+
+      card.innerHTML = `
+    <img src="${movie.image}" alt="${movie.title}">
+    <div class="movie-info">
+      <h3>${movie.title}</h3>
+      <button class="play-btn">▶ Play</button>
+    </div>
+  `;
+
+      card.querySelector(".play-btn").addEventListener("click", () => {
+        window.open(movie.link, "_blank");
+      });
+
+      moviesMar.appendChild(card);
+    });
+
+
+
+    const movieseries = [
+      {
+        title: "The New Legends of Monkey",
+        image: "https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABSFy9s7HUK7RQd__r_p28dhN-8LE62La-EEDIAPp6TfrgD22NPkcoxYE1RYkX2yDLhkoPZHNGfeWklbpF0QVmNQ4X6kEZgQr5SOs8q10kL-yok089tCcIBH1.jpg?r=b88",
+        link: "https://www.netflix.com/in/title/80184682"
+      },
+      {
+        title: "Typewrite",
+        image: "https://occ-0-8407-2218.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRhTPx1lF8YS_hAXy3c1--hcL5vih27Z82QC3Wo4CnLtnnfH1jzlUEG-EDCgGYyaWuS-Kf_PXzxTSJrCn54sCWuAooIbvNCFUG-FajiH25mqpMLZm6IDOjJgKg.jpg?r=559",
+        link: "https://www.netflix.com/in/title/80996338"
+      },
+      {
+        title: "The Fame Game",
+        image: "https://occ-0-8407-114.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABQ2N331wSFThNx-tci4BJKhFoX_3i_7cnRPkGnkLwEt4jBQlLtuZ-OhGlKLhGHJwhocAwPTctNqn27iL9SH7lTNKc0QRO6fXSn9BQHwDCI6iErOi3jWsRPzHrw.jpg?r=a80",
+        link: "https://www.netflix.com/in/title/81133092"
+      },
+      {
+        title: "Ghoul (miniseries)",
+        image: "https://occ-0-8407-90.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABbQORMPH8LK2xN5Ax8777z3gzgEl1jTOalb4AAhXIaL1Ij5r3WQ82KWLvpClFngXnQKdoqASqTA6_yD3IlOqn7ZHZc66T-WzTdcD.jpg?r=2f0",
+        link: "https://www.netflix.com/in/title/81133092"
+      },
+      {
+        title: "The Letter for the King",
+        image: "https://occ-0-8407-2218.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABdbkfavyjpXcM6_KGVBPdbd4AtKhjJx4esFDpAlOarBWKXbwaq1YeRbpGjt2gMZetGzYt87qgWvQh52mYLs4Ye2EM-omSbbGbg6e1rkeqiGp0cPiADpXoge75w.jpg?r=1ac",
+        link: "https://www.netflix.com/in/title/80222934"
+      },
+      {
+        title: "Avatar: The Last Airbender ",
+        image: "https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABdumHN7X1U3ymZqM3kY2JgHCT0cJadh987iwgHvBbIJmGYQVXpPoEivFw_MLGX0JL_GYouUkhhSmvlMx2dOo648X9wz9WDl3xQCH.jpg?r=d5c",
+        link: "https://www.netflix.com/in/title/80237957"
+      },
+      {
+        title: "Mandala Murders",
+        image: "https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABR_fYv-9FOtmyG97q0y3fT91lm8wYP7dDMsYy7HC89R3GOZi_nzeSJmgbbpX7YjOoXoy3iifF-Cfsbcn7NpJG1Lqvu2aM8v3RCDN.jpg?r=8fa",
+        link: "https://www.netflix.com/in/title/81749580"
+      },
+      {
+        title: "Jupiter's Legacy",
+        image: "https://occ-0-8407-448.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABbRKrDddYtmYZjdsXoxu7owAB97B-hXBGEJFeM-ZMh9Q98BtgJqm3U_bIApNTVmnFZvKyfOJ00pHs8dOHifPQ0ZDDtfbVpD5dO1rcVlJUVJD8S1QzYQiV7J3wQ.jpg?r=856",
+        link: "https://www.netflix.com/in/title/80244953"
+      }
+    ];
+
+    const moviesLow = document.getElementById("moviesLow");
+
+    movieseries.forEach(item => {
+
+      const card = document.createElement("div");
+      card.classList.add("movie-card");
+
+      card.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}">
+                    <div class="movie-info">
+                        <h3>${item.title}</h3>
+                        <button class="play-btn">▶ Play</button>
+                    </div>
+                `;
+
+      card.querySelector(".play-btn").addEventListener("click", () => {
+        window.open(item.link, "_blank");
+      });
+
+      moviesLow.appendChild(card);
+    });
+
+
+
+    const moviesouth = [
+      {
+        title: "Kara",
+        image: "https://occ-0-8407-444.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABR2Rd_MAd7Xx_ClRxPbN4kI1UFtgdpVs54yyH_x5Qi2wGymgE_66miISkdmbUIdPzp7LKk3scER35YpUHTCKG8j_UbSIfcO3yOK4.jpg?r=8ae",
+        link: "https://www.netflix.com/in/title/82057588"
+      },
+      {
+        title: "29",
+        image: "https://occ-0-8407-2705.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABR1v-5e5pC-yfnkauZKvS802HYPTQOi3MsuH_SCzaoZ2IvUcx-5bnknUuQYd5yieZfZ0Hqso_3nPjnf--BG2vhPVUBD4vprjYsjMdPYvhNzUG-58bS5q1EJ1Cw.jpg?r=899",
+        link: "https://www.netflix.com/in/title/82776022"
+      },
+      {
+        title: "With Love",
+        image: "https://occ-0-8407-999.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABWMX3fbk-m0F4QuUNhe3WnGJInW2MjfNDIHTmkzRAIViyjcQWe3nq_6WfsLWrVDX5txxF_aTPqnlme4XPJUOqg9SjIt3gHuHJ1g1.jpg?r=696",
+        link: "https://www.netflix.com/in/title/82629230"
+      },
+      {
+        title: "Hit: The Third Case",
+        image: "https://occ-0-8407-90.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABTrW-xHx1k4lQvSXvdmxJt0J_mF_OPnSyE0bePr28i9J4V08JcdN0sniBkWUeLuLPPvHiyQ0GMBEwDmOYp0X635raowkdlAKZ6CzcI9Yq6HyaEx5_DGrCNhGeA.jpg?r=7f3",
+        link: "https://www.netflix.com/in/title/81999621"
+      },
+      {
+        title: "Biker",
+        image: "https://occ-0-8407-114.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABYdjGyC6EfrE_rvFRtmupDqnySAA-hRKAFV-ISJ_m5U2db3VbMzQyTyj-1A_xbAHZECfsY0GZdDvhffSuTEbpv-qI0OxxCAe5oSt5tJcbRQv4QIS9IugsjjB8Q.jpg?r=2fe",
+        link: "https://www.netflix.com/in/title/82109243"
+      },
+      {
+        title: "Guntur Kaaram",
+        image: "https://occ-0-8407-1001.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABbMxoZR_Um_iiCN15ACanfxMzIKTPBKjnuEFZ2AuNHuoRr8FPY9zto7jm71nOO6S6V566JqdZNwLQo00YXNFMaflzr7NQY9bn6Ok.jpg?r=5e5",
+        link: "https://www.netflix.com/in/title/81637260"
+      },
+      {
+        title: "Dude",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiIZB4IYj118mhsZ1mgxibQiC7AbRpnQlarQ&s",
+        link: "https://www.netflix.com/in/title/81900290"
+      },
+      {
+        title: "Raw",
+        image: "https://occ-0-8407-2218.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABQrCLODKak6tq2YTdXv-oAi_Cz0TBDnRxfFCFOO1Wy1C1OyF7u9hh8xUe6U9KLRIg_GVBGeRGg9-5LrxyNsW1sw1aDBMYOxkqmhz_xv5JumFMicLMYoKBLXW_g.jpg?r=c01",
+        link: "https://www.netflix.com/in/title/81508719"
+      },
+      {
+        title: "Idli Kadai",
+        image: "https://occ-0-8407-2705.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABag_3_fYv687InlI86_zPGLerG3vrwfQLJlioEvFF5J9e-UEJ-tBv4wv51M7URPUG6d7zgsnor12gV6eD5AmyYkBH1Rb6D49CDLQILrG_RCcvEY7AHv4weR5PQ.jpg?r=a01",
+        link: "https://www.netflix.com/in/title/82034831"
+      }
+    ];
+
+    const moviesBig = document.getElementById("moviesBig");
+
+    moviesouth.forEach(item => {
+
+      const card = document.createElement("div");
+      card.classList.add("movie-card");
+
+      card.innerHTML = `
+        <img src="${item.image}" alt="${item.title}">
+        <div class="movie-info">
+            <h3>${item.title}</h3>
+            <button class="play-btn">▶ Play</button>
+        </div>
+    `;
+
+      card.querySelector(".play-btn").addEventListener("click", () => {
+        window.open(item.link, "_blank");
+      });
+
+      moviesBig.appendChild(card);
+    });
+
+
+
+
+    const movieanime = [
+      {
+        title: "Solo Leveling",
+        image: "https://occ-0-8407-90.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABdWbeTi-T2LkIx0QRm1vN4Tx6ryR63A4af9LAXNaDo7ATekkicJGbdueUc8jFmSGcuNKi-lOG07qCLLyaijox6H_I0rSvOUJ2vbd-ECLw48WxW97AFHPf9wV5g.jpg?r=5af",
+        link: "https://www.primevideo.com/detail/0O04K0R4VO6MHP57XSJXHI8G5I/ref=atv_dp_season_select_s1"
+      },
+      {
+        title: " Wind Breaker",
+        image: "https://occ-0-8407-2218.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABclypsNoSLrGJWN3dMB0IGzRdaXpsomI5kfYUWPa9YpSbonAdTigRyN9fWpQNZas-fOASPtTbVBgFjmpz2H8bV3zQeCehbRIk7ex.jpg?r=71f",
+        link: "https://www.primevideo.com/detail/0QB4IJNR2K556RYRIGK6MIV3QR"
+      },
+      {
+        title: "Tokyo Revengers",
+        image: "https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABcNpyvTLc-xNnX26fQlGLfdfCJQGizeK4x830u91RrWiEZEuzZ1Xl0KbF8iUN38zxXzCq5yK0UDbRzx9h7vDSgrgG7oMANZqrh2P.jpg?r=574",
+        link: "https://www.primevideo.com/detail/0SQL5FK5LE7OIE4MRU8YXIIIHR"
+      },
+      {
+        title: "Death Note",
+        image: "https://occ-0-8407-92.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABfx1O1beK9b2mjMEQXxmAB3EGCOt-T7B4X1OfSvZPzNQ2dSbe77KUr2PCPYBMRBmIojLoOj1GykcqDRZp3G8cOXQjqCYOoyVBC5hysqmyE6jzKAZ5I8oH5KFYw.jpg?r=3bd",
+        link: "https://www.primevideo.com/detail/0T5BXT4XSFJ8NCE02HJVEG8MR8"
+      },
+      {
+        title: "Devil May Cry",
+        image: "https://occ-0-8407-116.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABQDFliL3fC2Buyq3zdzQCcRBCKs-_QD1Z-YfysYW2_UHRR9D7BeiInM2j6dKnAuAml0bNfOuEEI7f_Q5rmDoMLK5ZoOKg3H9rNpeOEcRUnr_gSiE2QrrTPHadg.jpg?r=5d2",
+        link: "https://www.primevideo.com/detail/0I9UNICI9FYJRX0HXYYZT4ITKG"
+      },
+      {
+        title: "Hunter x Hunter",
+        image: "https://occ-0-8407-2218.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABbf-YobqLBYuPLH6vSdTNUAOjeHpU28Zsza2sRaiY9arWB5HOyDp1Csby-eQmJSJSVlPArJNvWLpaA2FYOcDY9JmI44scFKoISqL.jpg?r=327",
+        link: "https://www.primevideo.com/detail/0SG03UO097Y00DEVXSDY542ZEP"
+      },
+      {
+        title: "Demon Slayer",
+        image: "https://occ-0-8407-2218.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVhuz7XSCfu1HABxiY8RxbMXV9aJ6fuoQDHwNweuYbbauvx0IbaVrv8ZQdbtC3ZCcay45gg-Dl-kiM-QUaqMRgk2rzeVKX9UlywR.jpg?r=0e6",
+        link: "https://www.primevideo.com/detail/0LB2ZHJCH603GVH3PVIZIM1PKE"
+      },
+      {
+        title: "Naruto",
+        image: "https://occ-0-8407-92.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABedyRVI_FtR4HP9KYEnflCfT29DLkZ2NcqPZ6YrLvBWaLpfLgJkrnUgXtOHE0kQujYf53nEo3Dp8uHCCHSRbx4zcije3Cxn9PsgV.jpg?r=f23",
+        link: "https://www.primevideo.com/detail/0PZM3YLKLSPZ2JX4LEOD5EGUJC"
+      },
+      {
+        title: "Jujutsu Kaisen",
+        image: "https://occ-0-8407-448.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABYkR86QJIFvTOth3YonpJrPwZ6GFIVtQ-przy2Ntt4yy6oAAMLA0Dkd5ReY_zKKKm6WAeM96IHruPS7FWmrc_Krx3W5LsTLZHYc6.jpg?r=107",
+        link: "https://www.primevideo.com/detail/0K8E6T93KY6BEN2BZT6E9IZM9A"
+      }
+    ];
+
+    const moviesAni = document.getElementById("moviesAni");
+
+    movieanime.forEach(item => {
+
+      const card = document.createElement("div");
+      card.classList.add("movie-card");
+
+      card.innerHTML = `
+            <img src="${item.image}" alt="${item.title}">
+            <div class="movie-info">
+                <h3>${item.title}</h3>
+                <button class="play-btn">▶ Play</button>
+            </div>
+        `;
+
+      card.querySelector(".play-btn").addEventListener("click", () => {
+        window.open(item.link, "_blank");
+      });
+
+      moviesAni.appendChild(card);
+    });
+
+
+ 
+
+    const movieall = [
+      {
+        title: "Saiyaara",
+        image: "https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABdpBNeFW2efKuPgb6f-qduqORjmMAamU-8d-xETfZF1i3Z8u-HN2YK4DNRsxj3rHZ_jw80pGiqeRSLWbI0KXwx8a9ZgFlewi0Sod.jpg?r=0dc",
+        link: "https://www.netflix.com/in/title/82024663"
+      },
+      {
+        title: "Inspector Zende",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtwF6ml4Jd9pXAWUiaLq_YEuQVI0tjCs8yl54p5-1aGYi-d843Nj90cy8&s=10",
+        link: "https://www.netflix.com/in/title/81778084"
+      },
+      {
+        title: "Chhaava",
+        image: "https://occ-0-8407-448.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABWwNWJWefR8tf6kd_7KWffISm7Mcmj5lHpgIKSaj4IaHdleDNRD1-cKNhYtCxHZR5p61SXrdWMlXd_L4ZnYQRpWcf7FKle9OUWZk.jpg?r=fbd",
+        link: "https://www.netflix.com/in/title/81902061"
+      },
+      {
+        title: "Tere Ishk Mein",
+        image: "https://occ-0-8407-1001.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABTCxx9fGQXtjeUbjjuwCH_a9H7SQaXHLuxRAedFBHrPeGTws1_gjfEaAo2YIPwxLhR8O13ChxR19V2goDLAcGem40Hj1M8vvsd96.jpg?r=407",
+        link: "https://www.netflix.com/in/title/81772320"
+      }
+    ];
+
+    const moviesAll = document.getElementById("moviesAll");
+
+    movieall.forEach(item => {
+
+      const card = document.createElement("div");
+      card.classList.add("movie-card");
+
+      card.innerHTML = `
+            <img src="${item.image}" alt="${item.title}">
+            <div class="movie-info">
+                <h3>${item.title}</h3>
+                <button class="play-btn">▶ Play</button>
+            </div>
+        `;
+
+      card.querySelector(".play-btn").addEventListener("click", () => {
+        window.open(item.link, "_blank");
+      });
+
+      moviesAll.appendChild(card);
+    });
+
+
+
+
+    const movieall1 = [
+      {
+        title: "Maa",
+        image: "https://occ-0-8407-114.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABbiBM8Xi2GF0fso5wSscIBEbDgjJwTaQ2fO0gJUHVtL7cBVnql2NOCPHqo9Wavx_sEWS44_Sp9DO1JTvRdLqT-LgdK1kmgbDaNdH.jpg?r=3a5",
+        link: "https://www.justwatch.com/in/movie/maa-2025"
+      },
+      {
+        title: " Kaal Trighori",
+        image: "https://cdn.district.in/movies-assets/images/cinema/Kaal-Trighori_Horizontal_Poster2-650a1710-afef-11f0-a00d-b90481859918.jpg",
+        link: "https://www.youtube.com/watch?v=MxYLzgyWxKg"
+      },
+      {
+        title: "Do Not Enter",
+        image: "https://m.media-amazon.com/images/S/pv-target-images/baaa0db615361f5848e306f9e2911ade19c4910001c66a49f17f39eaf5b9192c.jpg",
+        link: "https://www.imdb.com/title/tt3515878/"
+      },
+      {
+        title: "Bhooth Bangla",
+        image: "https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABWTiGGDOeiv1J9utRgC4Ddnwl-j_xqiU3d_fP4h8dwxibRWJDa43zmSPVLJwpeyfvPrH5I77lr9-SldfCxPnqvQwws5dIHSjtUsP-_iTeto3Eqcwe4_OHcYr8g.jpg?r=431",
+        link: "https://www.imdb.com/title/tt29540862/"
+      }
+    ];
+
+    const moviesAll1 = document.getElementById("moviesAll1");
+
+    movieall1.forEach(item => {
+
+      const card = document.createElement("div");
+      card.classList.add("movie-card");
+
+      card.innerHTML = `
+            <img src="${item.image}" alt="${item.title}">
+            <div class="movie-info">
+                <h3>${item.title}</h3>
+                <button class="play-btn">▶ Play</button>
+            </div>
+        `;
+
+      card.querySelector(".play-btn").addEventListener("click", () => {
+        window.open(item.link, "_blank");
+      });
+
+      moviesAll1.appendChild(card);
+    });
+
+
+
+    const movieall2 = [
+      {
+        title: " Squid Game",
+        image: "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQVylBzU37ZpOJaV_EWOfGm7R3S6KJxdwj1KUgk7YQNg_vr7mSCnXzWJ7OaLdgqhKCGX2qeyrkWINXY_FJfoeRCsaIylCBHtQczT5GSpoHv7i0L0xCcQtXN4O8mAwzQZQqeUCXyLtVuwjlz50PCU66aV1.jpg?r=0f1",
+        link: "https://www.netflix.com/tudum/articles/squid-game-season-2-confirmed"
+      },
+      {
+        title: " Scream 7 ",
+        image: "https://m.media-amazon.com/images/S/pv-target-images/573c0b63e86d0f0cff26037cee4430ba37b76050ede702866a1823df4d527b74._UR1920,1080_.jpg",
+        link: "https://www.primevideo.com/detail/0R4HOUHPV4SU3LSWK7M1K5S5JB"
+      },
+      {
+        title: "BloodHounds",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1fcachrG4mR-NJNMDwlSyPRZm7Dhcg5wKI2HmvpJZrDx0XGnBAiLk2kO3&s=10",
+        link: "https://www.netflix.com/tudum/articles/bloodhounds-season-2-release-date-trailer-news"
+      },
+      {
+        title: "All of Us Are Dead",
+        image: "https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQa2zqNtaYAlalI4nLs0ZiC04vbyALYVxVF9M2ZYYOZEZgtBIsGaSOepOsQMSZACBavyg2J6lVbnM0K9PHjTGxXgQisIvkD0XXimBS1L1zgolUiwbwvq3XxZbGSHA3pcqWOBPbuJnPtitr0PNwxwMSCvZMEE.jpg?r=ed7",
+        link: "https://www.netflix.com/in/title/81237994"
+      }
+    ];
+
+    const moviesAll2 = document.getElementById("moviesAll2");
+
+    movieall2.forEach(item => {
+
+      const card = document.createElement("div");
+      card.classList.add("movie-card");
+
+      card.innerHTML = `
+            <img src="${item.image}" alt="${item.title}">
+            <div class="movie-info">
+                <h3>${item.title}</h3>
+                <button class="play-btn">▶ Play</button>
+            </div>
+        `;
+
+      card.querySelector(".play-btn").addEventListener("click", () => {
+        window.open(item.link, "_blank");
+      });
+
+      moviesAll2.appendChild(card);
+    });
+
+
+
+
+
+    const movieall3 = [
+      {
+        title: " Castlevania",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRza2csJgUbNg61f9YF1K4ANft_xHaGVO_Cl3ymFhmAkb9a--9XzAB2sPM&s=10",
+        link: "https://www.netflix.com/in/title/80095241"
+      },
+      {
+        title: " Kengan Ashura ",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRRVBV583bmfqlt2vOX3W_q8kB6W1skuRy_4AsYZmnSdGdiqvRmPFs2xw&s=10",
+        link: "https://www.netflix.com/in/title/80992228"
+      },
+      {
+        title: "Vinland Saga",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTukRJ_00BAECwinHD-285jOFhiTd5NRNiawSBsgkV3iQ&s=10",
+        link: "hhttps://www.netflix.com/in/title/81249833"
+      },
+      {
+        title: " Violet Evergarden",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi_iqD9h9rxTr3DExUBbVZVpaCPSBt25x58aBixu2vppKM6iWDhaU2bRtJ&s=10",
+        link: "https://www.netflix.com/in/title/81193214"
+      }
+    ];
+
+    const moviesAll3 = document.getElementById("moviesAll3");
+
+    movieall3.forEach(item => {
+
+      const card = document.createElement("div");
+      card.classList.add("movie-card");
+
+      card.innerHTML = `
+            <img src="${item.image}" alt="${item.title}">
+            <div class="movie-info">
+                <h3>${item.title}</h3>
+                <button class="play-btn">▶ Play</button>
+            </div>
+        `;
+
+      card.querySelector(".play-btn").addEventListener("click", () => {
+        window.open(item.link, "_blank");
+      });
+
+      moviesAll3.appendChild(card);
+    });
+
+
+    const movieall4 = [
+      {
+        title: " The Royals",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3hcn6_F8URW0Un6gOkEIpOHMgD2MX3wcwO2Cn0UkaVA&s=10",
+        link: "https://www.netflix.com/tudum/articles/the-royals-release-date-news"
+      },
+      {
+        title: " Delhi Crime ",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT61UL4GalGA_6u2CSRK_SIkh54p_RfNMvHu6pF5BSEKg&s=10",
+        link: "https://www.youtube.com/watch?v=v6QKnem6qIA"
+      },
+      {
+        title: "Ghoul (miniseries)",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIuKpDcJu4-zMiTjvM9a_MaYbwXOnQsUIjrbnA_l3A-a2v02vUBUQeml8&s=10",
+        link: "https://www.imdb.com/title/tt5909930/"
+      },
+      {
+        title: "Tooth Pari: When Love...",
+        image: "https://occ-0-8407-2218.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABcb5SV9PiiBHcTy7aBguIQ5Yty8Ms9RwcJtqaWbI5mmRgkvADJGu6kb_evRuyECW_76Jn3A2Ml72_1XOwILxEd0qVts0_7dMWOsv.jpg?r=6a1",
+        link: "https://www.imdb.com/title/tt27191658/"
+      }
+    ];
+
+
+    const moviesAll4 = document.getElementById("moviesAll4");
+
+    movieall4.forEach(item => {
+
+      const card = document.createElement("div");
+      card.classList.add("movie-card");
+
+      card.innerHTML = `
+            <img src="${item.image}" alt="${item.title}">
+            <div class="movie-info">
+                <h3>${item.title}</h3>
+                <button class="play-btn">▶ Play</button>
+            </div>
+        `;
+
+      card.querySelector(".play-btn").addEventListener("click", () => {
+        window.open(item.link, "_blank");
+      });
+
+      moviesAll4.appendChild(card);
+    });
+
+
+
+
+
+
+
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+      const question = item.querySelector(".faq-question");
+
+      question.addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    });
+
+ 
+
+
+    function startMembership() {
+
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message");
+
+      if (email === "") {
+        alert("Please enter your email");
+        return;
+      }
+
+      if (!email.includes("@")) {
+        alert("Please enter a valid email");
+        return;
+      }
+
+      message.innerHTML = "Membership started successfully for: " + email;
+    }
+
+
+    function signOut() {
+      localStorage.removeItem("user");
+      localStorage.removeItem("isLoggedIn");
+      sessionStorage.clear();
+
+      alert("Successfully logged out!");
+
+      window.location.href = "login.html";
+    }
+
+
+
+
+    document
+      .getElementById("emailForm")
+      .addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const email =
+          document.getElementById("email").value.trim();
+
+        if (email) {
+          alert("Email submitted: " + email);
+        }
+      });
+
+  </script>
+
+
+ 
+  <script src="script.js"></script>
+</body>
+
+</html>
